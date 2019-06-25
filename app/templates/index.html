@@ -7,7 +7,7 @@
     <meta name="author" content="@gotoariel">
     <!-- <link rel="icon" href="favicon.ico"> -->
 
-    <title>HELLO</title>
+    <title>SGD-TICKER-APP</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,9 +16,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-left">
-          <h1>Sam's amazing page :)</h1>
+          <h1>SGD Ticker Lookup App</h1>
+          <p>What was going on with the stock Market in October 2016?</p>
           <form action="#">
-              What stock do you want: <input type="text" id="stock_name" />
+              <p>What stock do you want? (format = NSE/AAPL) <input type="text" id="stock_name" /></p>
               <input type="submit" value="Submit" id="submit_button" />
           </form>
         </div>
@@ -32,7 +33,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script>
-        console.log("HELLO BRO");
+        console.log("Check Output");
         $("#submit_button").click(function() {
           var stockName = $("#stock_name").val();
           console.log("STOCK NAME " + stockName);
