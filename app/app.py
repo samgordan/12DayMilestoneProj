@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect
 import quandl
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
@@ -13,6 +15,7 @@ def get_data():
   stockName = request.form['stockName']
   quandl.ApiConfig.api_key = "Fkz_a6YzFZjmydcKx8tX"
   data = quandl.get(stockName)
+  print(data)
   return data.to_json()
 
 if __name__ == '__main__':

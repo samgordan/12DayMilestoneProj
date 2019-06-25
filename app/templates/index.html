@@ -36,9 +36,18 @@
         $("#submit_button").click(function() {
           var stockName = $("#stock_name").val();
           console.log("STOCK NAME " + stockName);
-          $.post("/data", { stockName: stockName }, function(data) {
+          $.post("http://localhost:5000/data", { stockName: stockName }, function(data) {
             console.log("GOT DATA");
-            console.log(data);
+            var obj = JSON.parse(data);
+            //console.log(obj.Value);
+            //console.log(obj.Value["505008000000"]);
+            for (var key in obj.Value) {
+              console.log(key)
+              var date = new Date(parseInt(key));
+              console.log(date);
+              var stockPrice = obj.Value[key];
+              console.log(stockPrice);
+            }
           });
         });
       </script>
