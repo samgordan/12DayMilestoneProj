@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import quandl
 from flask_cors import CORS
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
@@ -14,7 +15,7 @@ def get_data():
   print(request.form['stockName'])
   stockName = request.form['stockName']
   quandl.ApiConfig.api_key = "Fkz_a6YzFZjmydcKx8tX"
-  data = quandl.get(stockName, start_date='2016-10-01', end_date='2016-10-31',)
+  data = quandl.get(stockName)
   print(data)
   return data.to_json()
 
